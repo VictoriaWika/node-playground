@@ -1,0 +1,12 @@
+#!/usr/bin/env node
+
+// const max = Number.isNaN(Number(process.argv[2])) && undefined
+const input = Number(process.argv[2])
+const max = Number.isNaN(input) ? undefined : input
+const result = random(max)
+console.log(result)
+
+function random(max = 10) {
+  return Math.floor(Math.random() * (max + 1))
+}
+// + 1 weil math floor abrundet und wir bis 10 tählen wollen

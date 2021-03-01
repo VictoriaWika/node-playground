@@ -1,0 +1,19 @@
+#!/usr/bin/env node
+const chalk = require('chalk')
+const { exit } = require('process')
+const fs = require('fs')
+const file = process.argv[2]
+
+fs.readFile(file, { encoding: 'utf-8' }, (err, text) => {
+  err
+    ? console.error(chalk.red(err))
+    : console.log(chalk.green(text.split('\n').length))
+  exit(err ? 1 : 0)
+})
+
+// Example
+// fs.readFile(file, { encoding: 'utf-8' }, (err, text) => {
+//   err
+//     ? console.error(chalk.red(err))
+//     : console.log(chalk.green(text.split('\n').length))
+// })
