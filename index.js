@@ -12,5 +12,9 @@
 // const max = Number(process.argv[2])
 // console.log(random(max))
 
-const read = require('./read.js')
-read('hello.js')
+// const read = require('./read.js')
+// read('hello.js')
+
+const addStudent = require('./addStudent.js')
+const [, , name, role] = process.argv
+addStudent({ name, role, php: false })
